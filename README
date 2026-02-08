@@ -2,47 +2,44 @@ dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
 
+You can find the original project website on: https://dwm.suckless.org
+
 
 Requirements
 ------------
 In order to build dwm you need the Xlib header files.
 
+I use rofi as my app launcher and kitty as my terminal emulator. So if you want to use this, install both or change these apps on config.h.
 
 Installation
 ------------
 Edit config.mk to match your local setup (dwm is installed into
 the /usr/local namespace by default).
 
-Afterwards enter the following command to build and install dwm (if
-necessary as root):
+Afterwards enter the following command to build and install dwm (as root):
 
     make clean install
 
 
 Running dwm
 -----------
-Add the following line to your .xinitrc to start dwm using startx:
+Add the following line to your ~/.xinitrc to start dwm using startx command:
 
     exec dwm
 
-In order to connect dwm to a specific display, make sure that
+In order to connect dwm to a specific display, make
+sure that
 the DISPLAY environment variable is set correctly, e.g.:
 
     DISPLAY=foo.bar:1 exec dwm
 
 (This will start dwm on display :1 of the host foo.bar.)
 
-In order to display status info in the bar, you can do something
-like this in your .xinitrc:
-
-    while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
-    do
-    	sleep 1
-    done &
-    exec dwm
-
+The xsetroot command won't work to change the text on the bar, instead it have two variables on dwm.c: stext and stext2 (top bar and bottom bar). Check out the drawbars() and drawbar() functions to understand more how it works.
 
 Configuration
 -------------
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
+
+My preference is to edit dwm.c directely by now, but will make my functions to config.h soon.
