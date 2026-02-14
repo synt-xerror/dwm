@@ -11,7 +11,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 
 
 static const char *fonts[] = {
-	"PxPlus IBM VGA 8x16:size=16"
+	"PxPlusIBMVGA8 Nerd Font:size=13"
 };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_black[]       = "#000000";
