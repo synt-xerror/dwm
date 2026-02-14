@@ -69,8 +69,8 @@ static const char *ledcmd[] = { "led", "toggle", NULL };
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_gray3, "-sb", col_gray4, "-sf", col_gray4, NULL };
 static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
-static const char *printcmd_a[] = { "xfce4-screenshooter", "-f", "-s", "/home/syntax/pic/Screenshots", NULL };
-//static const char *printcmd_s[] = { "xfce4-screenshooter", "-r", "-s", "/home/syntax/pic/Screenshots", NULL };
+static const char *printcmd_a[] = { "prtcrn", NULL };
+// static const char *printcmd_sel[] = { "prtcrn", "s", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        	function        argument */
@@ -110,7 +110,7 @@ static const Key keys[] = {
 	{ 0,				XK_Scroll_Lock, spawn,		{.v = ledcmd } },
 	{ MODKEY,			XK_d,		spawn,		{.v = roficmd } },
 	{ 0,				XK_Print,	spawn,		{.v = printcmd_a } },
-	//{ XK_Shift_L,			XK_Print,	spawn,		{.v = printcmd_s } },
+	//{ MODKEY,			XK_Print,	spawn,		{.v = printcmd_sel } },
 };
 
 /* button definitions */
