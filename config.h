@@ -71,6 +71,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
 static const char *printcmd_a[] = { "prtscr", NULL };
 static const char *printcmd_sel[] = { "prtscr", "s", NULL };
+static const char *monitorhotplug[] = { "monitor-hotplug", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        	function        argument */
@@ -111,6 +112,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_d,		spawn,		{.v = roficmd } },
 	{ 0,				XK_Print,	spawn,		{.v = printcmd_a } },
 	{ MODKEY,			XK_Print,	spawn,		{.v = printcmd_sel } },
+	{ MODKEY,			XK_Escape,	spawn,		{.v = monitorhotplug } },
 };
 
 /* button definitions */
